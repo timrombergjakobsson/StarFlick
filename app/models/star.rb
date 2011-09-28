@@ -11,7 +11,8 @@ class Star
    
    def self.all
      Rails.cache.fetch(self.cache_key, :expires_in => 5.minutes) do
-       doc = Nokogiri::XML(open("http://api.flickr.com/services/rest/?method=flickr.photosets"))
+       doc = Nokogiri::XML(open("http://api.flickr.com/services/rest/?method=flickr.photosets")) 
+       puts doc
      end
    end
   
